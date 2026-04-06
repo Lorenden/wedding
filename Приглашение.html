@@ -1,0 +1,607 @@
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадьба | Борис и Ангелина</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 5 (иконки) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fef9f7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0.5rem auto 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Навигация */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero-content .date {
+            font-size: 2rem;
+            font-weight: 300;
+            border-top: 1px solid rgba(255,255,255,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+        }
+
+        /* Таймер */
+        .timer-section {
+            padding: 4rem 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .timer-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .timer-item span {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #d4af37;
+            display: block;
+        }
+
+        .timer-item p {
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Общие секции */
+        .section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background: #fef1ec;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Детали мероприятия */
+        .details-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .detail-item {
+            flex: 1 1 200px;
+        }
+
+        .detail-item i {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .detail-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item p {
+            margin-bottom: 0.5rem;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Программа */
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 1rem auto;
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .schedule-time {
+            font-weight: 700;
+            color: #d4af37;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .schedule-desc {
+            font-weight: 500;
+            flex: 1;
+            text-align: left;
+        }
+
+        /* Дресс-код (без цветов) */
+        .dress-codes {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .dress-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .dress-item i {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .dress-item p {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Пожелания */
+        .wishes-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .wishes-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .wishes-note {
+            background: #fef1ec;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            text-align: left;
+        }
+
+        .wishes-note p {
+            margin-bottom: 0.5rem;
+        }
+
+        .wishes-note i {
+            color: #d4af37;
+            margin-right: 0.5rem;
+        }
+
+        /* Контакты */
+        .contacts {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .contact-item i {
+            color: #d4af37;
+            margin-right: 0.5rem;
+        }
+
+        /* Футер */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content .date {
+                font-size: 1.5rem;
+            }
+            nav ul li a {
+                padding: 0.8rem 1rem;
+            }
+            .timer-item {
+                min-width: 80px;
+                padding: 1rem;
+            }
+            .timer-item span {
+                font-size: 2rem;
+            }
+            .schedule-item {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+                padding: 1rem;
+            }
+            .schedule-time {
+                text-align: center;
+                min-width: auto;
+            }
+            .schedule-desc {
+                text-align: center;
+            }
+            .wishes-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#details">Детали</a></li>
+            <li><a href="#schedule">Программа</a></li>
+            <li><a href="#dresscode">Дресс-код</a></li>
+            <li><a href="#wishes">Пожелания</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Главная секция -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Борис &amp; Ангелина</h1>
+            <p>Приглашаем вас разделить с нами радость</p>
+            <div class="date">20 июня 2026</div>
+        </div>
+    </section>
+
+    <!-- Таймер -->
+    <section class="timer-section">
+        <div class="container">
+            <h2>До свадьбы осталось</h2>
+            <div class="timer" id="timer">
+                <div class="timer-item">
+                    <span id="days">110</span>
+                    <p>дней</p>
+                </div>
+                <div class="timer-item">
+                    <span id="hours">09</span>
+                    <p>часов</p>
+                </div>
+                <div class="timer-item">
+                    <span id="minutes">17</span>
+                    <p>минут</p>
+                </div>
+                <div class="timer-item">
+                    <span id="seconds">16</span>
+                    <p>секунд</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Детали мероприятия -->
+    <section id="details" class="section">
+        <div class="container">
+            <h2>Детали</h2>
+            <div class="details-info">
+                <div class="detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Дата и время</h3>
+                    <p>20 июня 2026</p>
+                    <p><strong>Сбор гостей в 17:00</strong></p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Место</h3>
+                    <p>Ресторан Briefing</p>
+                    <p>деревня Милково, 121</p>
+                    <a href="https://yandex.ru/maps/-/CPaR6G23" target="_blank" class="map-link">→ Открыть карту (Яндекс)</a>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Окончание</h3>
+                    <p>Торжество завершится в 22:30</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программа дня -->
+    <section id="schedule" class="section">
+        <div class="container">
+            <h2>Программа вечера</h2>
+            <div class="schedule-item">
+                <span class="schedule-time">17:00</span>
+                <span class="schedule-desc">Сбор гостей, приветственный фуршет</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-time">17:30</span>
+                <span class="schedule-desc">Банкет и праздничная программа</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-time">22:30</span>
+                <span class="schedule-desc">Заключение вечера</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дресс-код -->
+    <section id="dresscode" class="section">
+        <div class="container">
+            <h2>Дресс-код</h2>
+            <p style="margin-bottom: 2rem;">Нам будет приятно видеть вас нарядными</p>
+            <div class="dress-codes">
+                <div class="dress-item">
+                    <i class="fas fa-tshirt"></i>
+                    <p>Костюм</p>
+                </div>
+                <div class="dress-item">
+                    <i class="fas fa-female"></i>
+                    <p>Вечернее платье</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши пожелания -->
+    <section id="wishes" class="section">
+        <div class="container">
+            <h2>Наши пожелания</h2>
+            <div class="wishes-content">
+                <div class="wishes-text">
+                    <p>Дорогие гости! Мы очень рады, что вы разделите с нами этот день. Нам бы хотелось, чтобы в этот день сердца были лёгкими, души - открытыми, настроение - праздничным, а подарки - упакованными в конверты.</p>
+                </div>
+                <div class="wishes-note">
+                    <p><i class="fas fa-heart"></i> <strong>Особые отметки:</strong></p>
+                    <p>Если у вас есть пожелания по напиткам или особые предпочтения по меню, пожалуйста, укажите их в форме подтверждения. Мы постараемся учесть всё!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP форма (встроенная Google Форма) -->
+    <section id="rsvp" class="section">
+        <div class="container">
+            <h2>Подтверждение присутствия</h2>
+            <p>Пожалуйста, заполните форму до 1 июня 2026</p>
+            <div style="max-width: 800px; margin: 0 auto; background: white; padding: 1rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScc0_fDx_ngo_K0SqUT4YaI99F9uCfEtrgL9rUNJYLSo3STgw/viewform?embedded=true" 
+                        width="100%" 
+                        height="750" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        style="border-radius: 10px;">
+                    Загрузка...
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="section">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+79055828886">+7 (905) 582-88-86</a> <span>(Борис)</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+79853034600">+7 (985) 303-46-00</a> <span>(Ангелина)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>С любовью, Борис и Ангелина</p>
+        <p>20 июня 2026</p>
+        <p><a href="#home">Наверх</a></p>
+    </footer>
+
+    <!-- Скрипт таймера -->
+    <script>
+        // Установите дату свадьбы здесь (год, месяц-1, день, часы, минуты)
+        const weddingDate = new Date(2026, 5, 20, 17, 0); // 20 июня 2026, 17:00
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = weddingDate - now;
+
+            if (diff < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                if (targetId === 'home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
